@@ -106,6 +106,9 @@ jupyter notebook disease-prediction.ipynb
 4. you can use the Gradio Interface for easy input and prediction:
 ```python
 import gradio as gr
+def gradio_predict(*symptoms):
+    symptom_list = list(symptoms)
+    return predict_single(symptom_list)
 inputs = [gr.Textbox(placeholder="Symptom", label=f"Symptom {i+1}") for i in range(17)]
 
 interface = gr.Interface(
